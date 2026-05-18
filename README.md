@@ -4,18 +4,6 @@ A proactive **Inspect Element** alternative powered by local AI. Dev-Helper V2 r
 
 ---
 
-## 📺 Video Preview & Demo
-
-Have a look at Dev-Helper V2 in action! The preview below demonstrates error interception on a buggy dashboard, real-time AI debugging, and applying an automated git patch directly to GitHub:
-
-<video src="Recording 2026-05-17 202345.mp4" width="100%" controls autoplay loop muted style="border-radius: 8px; box-shadow: 0 4px 20px rgba(0, 0, 0, 0.35); margin: 16px 0;"></video>
-
-> [!TIP]
-> **GitHub Repository Hosting Note:** 
-> Keeping large video files in your repository can lead to repository bloat. For the best GitHub experience, you can upload your `.mp4` file directly to a GitHub Issue or Pull Request comment field to generate a hosted CDN link, then replace the local path in this README with the generated `https://github.com/user-attachments/assets/...` URL!
-
----
-
 ## 🌟 Key Features
 
 *   **🔍 Proactive Inspect Alternative**: Captures uncaught JavaScript errors, unhandled promise rejections, network errors (`fetch` / `XHR`), console warnings, and broken DOM resource links automatically.
