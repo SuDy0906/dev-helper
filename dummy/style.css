@@ -1,0 +1,160 @@
+/* ─── Reset ─────────────────────────────────────────────────────────────────── */
+*, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+
+/* ─── Base ──────────────────────────────────────────────────────────────────── */
+body {
+  font-family: 'Segoe UI', -apple-system, BlinkMacSystemFont, sans-serif;
+  background: #0d1117;
+  color: #c9d1d9;
+  min-height: 100vh;
+  display: flex;
+  flex-direction: column;
+}
+
+/* ─── Topbar ────────────────────────────────────────────────────────────────── */
+.topbar {
+  display: flex;
+  align-items: center;
+  gap: 16px;
+  padding: 18px 32px;
+  background: #161b22;
+  border-bottom: 1px solid #21262d;
+}
+
+.logo {
+  font-size: 22px;
+  font-weight: 700;
+  color: #f0f6fc;
+  letter-spacing: -0.3px;
+}
+
+.subtitle {
+  font-size: 12px;
+  color: #8b949e;
+  border-left: 1px solid #30363d;
+  padding-left: 16px;
+}
+
+/* ─── Grid ──────────────────────────────────────────────────────────────────── */
+.grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(280px, 1fr));
+  gap: 20px;
+  padding: 32px;
+  flex: 1;
+}
+
+/* ─── Cards ─────────────────────────────────────────────────────────────────── */
+.card {
+  background: #161b22;
+  border: 1px solid #21262d;
+  border-radius: 12px;
+  padding: 20px;
+  position: relative;
+  transition: border-color 0.2s, box-shadow 0.2s;
+  overflow: hidden;
+}
+
+.card:hover {
+  border-color: #388bfd;
+  box-shadow: 0 0 0 1px rgba(56,139,253,0.15);
+}
+
+.card-title {
+  font-size: 14px;
+  font-weight: 600;
+  color: #f0f6fc;
+  margin-bottom: 14px;
+  display: flex;
+  align-items: center;
+  gap: 6px;
+}
+
+.card-body {
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+  font-size: 13px;
+  color: #8b949e;
+  margin-bottom: 40px;
+}
+
+/* ─── Error Badge ───────────────────────────────────────────────────────────── */
+.error-badge {
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  right: 0;
+  background: rgba(248, 81, 73, 0.08);
+  border-top: 1px solid rgba(248, 81, 73, 0.15);
+  color: #ff7b72;
+  font-size: 10px;
+  font-weight: 600;
+  text-transform: uppercase;
+  letter-spacing: 1px;
+  padding: 6px 14px;
+  text-align: center;
+}
+
+.error-badge.warn {
+  background: rgba(210, 153, 34, 0.08);
+  border-top-color: rgba(210, 153, 34, 0.15);
+  color: #d29922;
+}
+
+/* ─── Buttons ───────────────────────────────────────────────────────────────── */
+.btn {
+  padding: 8px 16px;
+  border-radius: 6px;
+  font-size: 12px;
+  font-weight: 600;
+  cursor: pointer;
+  border: 1px solid transparent;
+  transition: all 0.15s;
+  font-family: inherit;
+  align-self: flex-start;
+}
+
+.btn-primary {
+  background: #21262d;
+  border-color: #30363d;
+  color: #c9d1d9;
+}
+
+.btn-primary:hover {
+  background: #388bfd;
+  border-color: #388bfd;
+  color: #fff;
+}
+
+.btn-secondary {
+  background: rgba(210, 153, 34, 0.1);
+  border-color: rgba(210, 153, 34, 0.3);
+  color: #d29922;
+}
+
+.btn-secondary:hover {
+  background: rgba(210, 153, 34, 0.2);
+}
+
+/* ─── Output areas ──────────────────────────────────────────────────────────── */
+#stats-output,
+#reports-output {
+  background: #0d1117;
+  border: 1px solid #21262d;
+  border-radius: 6px;
+  padding: 10px 12px;
+  font-family: 'Consolas', 'JetBrains Mono', monospace;
+  font-size: 11px;
+  min-height: 40px;
+  color: #8b949e;
+}
+
+/* ─── Footer ────────────────────────────────────────────────────────────────── */
+.footer {
+  padding: 16px 32px;
+  font-size: 11px;
+  color: #6e7681;
+  border-top: 1px solid #21262d;
+  text-align: center;
+}

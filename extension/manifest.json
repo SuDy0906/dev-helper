@@ -1,0 +1,40 @@
+{
+  "manifest_version": 3,
+  "name": "Dev-Helper V2",
+  "version": "2.0",
+  "description": "Proactive Inspect Alternative with local AI.",
+  "permissions": [
+    "sidePanel",
+    "scripting",
+    "activeTab",
+    "webRequest",
+    "storage"
+  ],
+  "content_security_policy": {
+    "extension_pages": "default-src 'self'; script-src 'self'; style-src 'self' https://fonts.googleapis.com; font-src 'self' https://fonts.gstatic.com; connect-src 'self' http://localhost:8000 ws://localhost:8000; img-src 'self' data:"
+  },
+  "background": {
+    "service_worker": "background.js"
+  },
+  "content_scripts": [
+    {
+      "matches": ["<all_urls>"],
+      "js": ["content.js"],
+      "run_at": "document_start"
+    }
+  ],
+  "web_accessible_resources": [
+    {
+      "resources": ["inject.js"],
+      "matches": ["<all_urls>"]
+    }
+  ],
+  "side_panel": {
+    "default_path": "sidepanel.html"
+  },
+  "host_permissions": [
+    "http://localhost/*",
+    "http://127.0.0.1/*",
+    "<all_urls>"
+  ]
+}

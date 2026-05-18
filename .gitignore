@@ -1,0 +1,9 @@
+.env
+dev_helper.db
+node_modules/
+__pycache__/
+*.pyc
+.vscode/
+.idea/
+dist/
+build/

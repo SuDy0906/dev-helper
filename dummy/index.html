@@ -1,0 +1,92 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>BuggyDash — DevHelper Test App</title>
+  <link rel="stylesheet" href="style.css" />
+</head>
+<body>
+
+  <header class="topbar">
+    <div class="logo">🐛 BuggyDash</div>
+    <span class="subtitle">A deliberately broken dashboard — for DevHelper testing</span>
+  </header>
+
+  <main class="grid">
+
+    <!-- Card 1: Triggers a JS runtime TypeError -->
+    <div class="card" id="card-runtime">
+      <div class="card-title">👤 User Profile</div>
+      <div class="card-body">
+        <p>Name: <span id="user-name">Loading…</span></p>
+        <p>Email: <span id="user-email">Loading…</span></p>
+        <button class="btn btn-primary" onclick="loadUser()">Load User</button>
+      </div>
+      <div class="error-badge">TypeError on click</div>
+    </div>
+
+    <!-- Card 2: Triggers a failed Fetch (network error) -->
+    <div class="card" id="card-network">
+      <div class="card-title">📊 Live Stats</div>
+      <div class="card-body">
+        <div id="stats-output">Click to fetch stats…</div>
+        <button class="btn btn-primary" onclick="fetchStats()">Fetch Stats</button>
+      </div>
+      <div class="error-badge">404 Network Error</div>
+    </div>
+
+    <!-- Card 3: Triggers an unhandled Promise rejection -->
+    <div class="card" id="card-promise">
+      <div class="card-title">💳 Payment</div>
+      <div class="card-body">
+        <p>Amount: <strong>$49.99</strong></p>
+        <button class="btn btn-primary" onclick="processPayment()">Process Payment</button>
+      </div>
+      <div class="error-badge">Unhandled Rejection</div>
+    </div>
+
+    <!-- Card 4: Triggers a console.warn + console.error -->
+    <div class="card" id="card-console">
+      <div class="card-title">🔔 Notifications</div>
+      <div class="card-body">
+        <p id="notif-count">0 notifications</p>
+        <button class="btn btn-secondary" onclick="loadNotifications()">Load Notifications</button>
+      </div>
+      <div class="error-badge warn">console.warn + error</div>
+    </div>
+
+    <!-- Card 5: Triggers a broken image (DOM resource error) -->
+    <div class="card" id="card-dom">
+      <div class="card-title">🖼️ Avatar</div>
+      <div class="card-body">
+        <img
+          id="avatar-img"
+          src="https://this-image-does-not-exist-xyz-123.com/avatar.png"
+          alt="User avatar"
+          style="width:80px;height:80px;border-radius:50%;object-fit:cover;"
+        />
+        <p style="margin-top:8px;font-size:12px;color:#9ca3af;">Broken image URL</p>
+      </div>
+      <div class="error-badge">DOM Resource Error</div>
+    </div>
+
+    <!-- Card 6: Triggers a failed XHR request -->
+    <div class="card" id="card-xhr">
+      <div class="card-title">📁 Reports</div>
+      <div class="card-body">
+        <div id="reports-output">No reports loaded.</div>
+        <button class="btn btn-primary" onclick="loadReportsXHR()">Load via XHR</button>
+      </div>
+      <div class="error-badge">XHR 500 Error</div>
+    </div>
+
+  </main>
+
+  <footer class="footer">
+    Open DevHelper V2 side panel → click any card button → watch errors appear 🔍
+  </footer>
+
+  <script src="app.js"></script>
+</body>
+</html>
